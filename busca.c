@@ -7,10 +7,9 @@
 #include "FuncionesComprobacion.h"
 
 
-float DifAdm = 0.001 ; /* comprobar que funciona mejor 0.001 o 0.0049 */
 float MensualesAleatorios[36];/* hasta 36 meses */
 
-int Tanteos = 100000000; /* numero de tanteos a realizar,... pueden ser millones */
+float Tanteos = 10000000000; /* numero de tanteos a realizar,... pueden ser millones */
 
 
 void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float Mensualidades[], int sizeMensualidades, float GastosGenerales, float GastosBI, float PresupuestoPEMmasGGmasBI, float GastosIVA, float GastosPorEjecucionContrata )
@@ -26,20 +25,21 @@ void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float M
 	
 	printf ( "Sumatorio: %.2f \n", sumatorio ( Mensualidades, sizeMensualidades ) );
 	
+	float DifAdm = 0.004 ; /* comprobar que funciona mejor 0.001 o 0.0049 */
 	float Mensuales[36][10];
-	int a = 0;
+	int a = 0; 
 	int b = 0;
 	float SumaMensualidades = 0;
 	int Contador = 0;
 	int repite = 0;
-	
+	float RepiteBucleComprobaciones =0;//'el contador puede ser muy grande'
 	
 	printf ( "Creando matriz de datos posibles....\n" ) ; /* Creo la matriz con los posibles valores*/
 	
 	for ( a = 0; a < sizeMensualidades; a++ ) {
 		for ( b = 0; b < 10; b++ ) {
-			float valor = Mensualidades[a] - 0.05 + b * 0.01;
-			Mensuales[a][b] = valor;
+			float valor = roundf((Mensualidades[a] - 0.05 + b * 0.01)*100)*0.01;
+			Mensuales[a][b] = roundf(valor*100)*0.01;
 		}
 		
 	}
@@ -52,13 +52,13 @@ void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float M
 	
 			}
 		printf("----\n");
-		}
+		}PEMSuma
 	*/
 	
 	printf ( "Creando datos meses aleatorios....\n" ) ;
 	
 	/*aqui empiza el codigo principal de TANTEOS*/
-	for ( a = 0; a < Tanteos; a++ ) {
+	for ( RepiteBucleComprobaciones = 0; RepiteBucleComprobaciones < Tanteos; RepiteBucleComprobaciones++ ) {
 	
 		/* eligo valores aleatorios */
 		for ( b = 0; b < sizeMensualidades; b++ ) {
@@ -69,24 +69,14 @@ void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float M
 		/*presentarMeses(MensualesAleatorios,sizeMensualidades);*/
 		
 		/* calculo datos */
-		SumaMensualidades = sumatorio ( MensualesAleatorios, sizeMensualidades );
+		SumaMensualidades = roundf(sumatorio ( MensualesAleatorios, sizeMensualidades )*100)*0.01;
 		
 		if ( PEMSuma == SumaMensualidades ) {
 			/*la suma es correcta, paso al siguiente calculo*/
 			Contador += 1;
-			printf ( "Suma encontrada [%i]\n", Contador );
+			/*printf ( "Suma encontrada [%i]\n", Contador ); */
 			
-			if  (Comprobacion ( MensualesAleatorios, sizeMensualidades,
-                    DifAdm,
-                    PorGG,
-                    PorBI,
-                    PorIVA,
-                    GastosGenerales,
-                    GastosBI,
-                    PresupuestoPEMmasGGmasBI,
-                    GastosIVA,
-                    GastosPorEjecucionContrata
-                 )==0) {
+			if  (Comprobacion ( MensualesAleatorios, sizeMensualidades,DifAdm,PorGG,PorBI,PorIVA,GastosGenerales,GastosBI,PresupuestoPEMmasGGmasBI,GastosIVA,GastosPorEjecucionContrata)==0) {
 				
 				printf ( "------------------------\n" );
 				printf ( "Pruebas Completas Realizadas: %i \n", a );
@@ -99,6 +89,7 @@ void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float M
 					         Mensualidades[repite] - MensualesAleatorios[repite]
 					       );
 				}
+			break;
 			}
 		}
 		

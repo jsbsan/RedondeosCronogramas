@@ -13,5 +13,5 @@ float sumatorio ( float v[], int sizeDatos )
 		total += v[i];
 		i++;
 	}
-	return  total;
+	return  (roundf(total*100)*0.01);
 }

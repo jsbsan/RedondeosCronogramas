@@ -21,11 +21,12 @@ int main ( int argc, char **argv )
 	int PorBI = 6;
 	int PorIVA = 21;
 	
+    
 	float GastosGenerales = roundf ( PEMSuma * PorGG / 100 * 100 ) / 100;
 	float GastosBI = roundf ( PEMSuma * PorBI / 100 * 100 ) / 100;
 	float PresupuestoPEMmasGGmasBI = PEMSuma + GastosGenerales + GastosBI;
 	float GastosIVA = roundf ( PresupuestoPEMmasGGmasBI * PorIVA / 100 * 100 ) / 100;
-	float GastosPorEjecucionContrata = GastosBI + GastosGenerales + GastosIVA + PEMSuma;
+	float GastosPorEjecucionContrata = roundf((GastosBI + GastosGenerales + GastosIVA + PEMSuma)*100) * 0.01;
 	printf ( "-----------------------------------------------------------------\n" );
 	printf ( "Datos Iniciales: \n" );
 	printf ( "-----------------------------------------------------------------\n" );
