@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/busca.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) 
 
 
 
@@ -114,6 +114,22 @@ $(IntermediateDirectory)/busca.c$(DependSuffix): busca.c
 
 $(IntermediateDirectory)/busca.c$(PreprocessSuffix): busca.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/busca.c$(PreprocessSuffix) "busca.c"
+
+$(IntermediateDirectory)/sumatorio.c$(ObjectSuffix): sumatorio.c $(IntermediateDirectory)/sumatorio.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/mint/jsbsanC/RedondeosCronogramas/sumatorio.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/sumatorio.c$(DependSuffix): sumatorio.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) -MF$(IntermediateDirectory)/sumatorio.c$(DependSuffix) -MM "sumatorio.c"
+
+$(IntermediateDirectory)/sumatorio.c$(PreprocessSuffix): sumatorio.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/sumatorio.c$(PreprocessSuffix) "sumatorio.c"
+
+$(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix): FuncionesComprobacion.c $(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/mint/jsbsanC/RedondeosCronogramas/FuncionesComprobacion.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix): FuncionesComprobacion.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) -MF$(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix) -MM "FuncionesComprobacion.c"
+
+$(IntermediateDirectory)/FuncionesComprobacion.c$(PreprocessSuffix): FuncionesComprobacion.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/FuncionesComprobacion.c$(PreprocessSuffix) "FuncionesComprobacion.c"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -1,1 +1,1 @@
-./Debug/mainTest.c.o ./Debug/main.c.o ./Debug/busca.c.o
+./Debug/mainTest.c.o ./Debug/main.c.o ./Debug/busca.c.o ./Debug/sumatorio.c.o ./Debug/FuncionesComprobacion.c.o
