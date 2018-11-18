@@ -5,13 +5,13 @@
 #include "sumatorio.h"
 
 
-float sumatorio ( float v[], int sizeDatos )
+double sumatorio ( double v[], int sizeDatos )
 {
-	float total = 0;
+	double total = 0;
 	int i = 0;
 	while ( i < sizeDatos ) {
-		total += v[i];
+		total += v[i]; /* redondeo a 2 decimales */
 		i++;
 	}
-	return  (roundf(total*100)*0.01);
+	return  total;
 }

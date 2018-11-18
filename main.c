@@ -7,26 +7,28 @@
 int main ( int argc, char **argv )
 {
 	/*Array Mensualidades*/
-	float Mensualidades[2] = {50, 50.15};
-	int sizeMensualidades = 2; /* Numero de Meses */
+/*Estos datos tendriamos que leerlo desde un archivo pasado como argumento*/
 	
-	Mensualidades[0] = 75;
-	Mensualidades[1] = 25.15;
-	
-	
+	double Mensualidades[36] = {
+8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07,8179.07
+};
 	/*Definición de lo que tiene que sumar el presupuesto de Ejecución Material */
-	float PEMSuma = 100.15; /* aqui poner el PEM con 2 decimales*/
+	
+	double PEMSuma = 0;
+     PEMSuma=294446.52; /* aqui poner el PEM con 2 decimales*/
 	/* Definicion de porcentajes de G.G, B.I. e I.V.A */
 	int PorGG = 13;
 	int PorBI = 6;
 	int PorIVA = 21;
-	
-    
-	float GastosGenerales = roundf ( PEMSuma * PorGG / 100 * 100 ) / 100;
-	float GastosBI = roundf ( PEMSuma * PorBI / 100 * 100 ) / 100;
-	float PresupuestoPEMmasGGmasBI = PEMSuma + GastosGenerales + GastosBI;
-	float GastosIVA = roundf ( PresupuestoPEMmasGGmasBI * PorIVA / 100 * 100 ) / 100;
-	float GastosPorEjecucionContrata = roundf((GastosBI + GastosGenerales + GastosIVA + PEMSuma)*100) * 0.01;
+
+
+	/*calculo automatico del tamaño de los datos*/
+    int sizeMensualidades = sizeof(Mensualidades)/sizeof(double); 
+	double GastosGenerales = round ( PEMSuma * PorGG  ) / 100;
+	double GastosBI = round ( PEMSuma * PorBI  ) / 100;
+	double PresupuestoPEMmasGGmasBI = PEMSuma + GastosGenerales + GastosBI;
+	double GastosIVA = round ( PresupuestoPEMmasGGmasBI * PorIVA  ) / 100;
+	double GastosPorEjecucionContrata = round((GastosBI + GastosGenerales + GastosIVA + PEMSuma)*100) * 0.01;
 	printf ( "-----------------------------------------------------------------\n" );
 	printf ( "Datos Iniciales: \n" );
 	printf ( "-----------------------------------------------------------------\n" );

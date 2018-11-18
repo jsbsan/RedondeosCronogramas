@@ -1,4 +1,4 @@
 #ifndef FUNCIONESCOMPROBACION_H
 #define FUNCIONESCOMPROBACION_H
-int Comprobacion ( float m[],int sizeM, float DifAdm,int PorGG,int PorBI, int PorIVA, float GastosGenerales,    float GastosBI,    float PresupuestoPEMmasGGmasBI,float GastosIVA,float GastosPorEjecucionContrata );
+int Comprobacion ( double m[],int sizeM, double DifAdm,int PorGG,int PorBI, int PorIVA, double GastosGenerales,    double GastosBI,    double PresupuestoPEMmasGGmasBI,double GastosIVA,double GastosPorEjecucionContrata );
 #endif

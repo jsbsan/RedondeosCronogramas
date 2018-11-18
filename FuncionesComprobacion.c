@@ -6,17 +6,17 @@
 #include "sumatorio.h"
 
 
-int Comprobacion ( float m[], int sizeM, float DifAdm, int PorGG, int PorBI, int PorIVA, float GastosGenerales, float GastosBI, float PresupuestoPEMmasGGmasBI, float GastosIVA, float GastosPorEjecucionContrata )
+int Comprobacion ( double m[], int sizeM, double DifAdm, int PorGG, int PorBI, int PorIVA, double GastosGenerales, double GastosBI, double PresupuestoPEMmasGGmasBI, double GastosIVA, double GastosPorEjecucionContrata )
 {
 	int a = 0;
-	float sumaGG = 0;
-	float sumaBI = 0;
-	float sumaIVA = 0;
-	float sumaSubtotales = 0;
+	double sumaGG = 0;
+	double sumaBI = 0;
+	double sumaIVA = 0;
+	double sumaSubtotales = 0;
 	
 	/*comprobacion de sumas GG*/
 	for ( a = 0; a < sizeM; a++ ) {
-		sumaGG +=  roundf ( m[a] * PorGG * 0.01 * 100 ) * 0.01;
+		sumaGG +=  round ( m[a] * PorGG ) * 0.01;
 	}
 	
 	if ( sumaGG >= ( GastosGenerales - DifAdm ) && ( sumaGG <= ( GastosGenerales + DifAdm ) ) ) {
@@ -27,7 +27,7 @@ int Comprobacion ( float m[], int sizeM, float DifAdm, int PorGG, int PorBI, int
 	
 	/* comrpobando sumas de Beneficio Industrial */
 	for ( a = 0; a < sizeM; a++ ) {
-		sumaBI += roundf ( m[a] * PorBI * 0.01 * 100 ) / 100;
+		sumaBI += round ( m[a] * PorBI ) * 0.01;
 	}
 	
 	if ( sumaBI >= ( GastosBI - DifAdm ) && ( sumaBI <= ( GastosBI + DifAdm ) ) ) {
@@ -40,7 +40,7 @@ int Comprobacion ( float m[], int sizeM, float DifAdm, int PorGG, int PorBI, int
 	
 	/* comrpobando suma IVA */
 	for ( a = 0; a < sizeM; a++ ) {
-		sumaIVA +=  roundf ( ( roundf ( m[a] * 100  ) * 0.01 + roundf ( m[a] * PorGG *0.01 * 100 ) * 0.01 + roundf ( m[a] * PorBI *0.01 * 100 ) * 0.01 ) * PorIVA *0.01 * 100 ) * 0.01;
+		sumaIVA +=  round ( ( roundf ( m[a] * 100 ) * 0.01 + roundf ( m[a] * PorGG ) * 0.01 + roundf ( m[a] * PorBI ) * 0.01 ) * PorIVA ) * 0.01;
 	}
 	
 	
@@ -53,6 +53,11 @@ int Comprobacion ( float m[], int sizeM, float DifAdm, int PorGG, int PorBI, int
 	sumaSubtotales = sumaBI + sumaGG + sumaIVA + sumatorio ( m, sizeM );
 	
 	if ( sumaSubtotales >= ( GastosPorEjecucionContrata - DifAdm ) && ( sumaSubtotales <= ( GastosPorEjecucionContrata ) ) ) {
+		printf ( "--------------------------------\n" );
+		printf ( "Suma GG: %.2f \n", sumaGG );
+		printf ( "Suma BI: %.2f \n", sumaBI );
+		printf ( "Suma IVA: %.2f \n", sumaIVA );
+		printf ( "Suma Totales: %.2f \n", sumaSubtotales );
 		printf ( "--------------------------\n" );
 		printf ( "Se ha encontrado solución \n" );
 		return 0; /* cumple */ /* correcto  0: true y -1:false */

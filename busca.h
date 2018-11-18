@@ -1,6 +1,6 @@
 /* File busca.h */
 #ifndef BUSCA_H
 #define BUSCA_H
-void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float Mensualidades[], int sizeMensualidades, float GastosGenerales, float GastosBI, float PresupuestoPEMmasGGmasBI, float GastosIVA, float GastosPorEjecucionContrata );
-void presentarMeses ( float m[], int sizeM );
+void BuscarSoluciones ( double PEMSuma, int PorGG, int PorBI, int PorIVA, double Mensualidades[], int sizeMensualidades, double GastosGenerales, double GastosBI, double PresupuestoPEMmasGGmasBI, double GastosIVA, double GastosPorEjecucionContrata );
+void presentarMeses ( double m[], int sizeM );
 #endif
