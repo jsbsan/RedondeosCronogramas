@@ -10,6 +10,9 @@
 float DifAdm = 0.001 ; /* comprobar que funciona mejor 0.001 o 0.0049 */
 float MensualesAleatorios[36];/* hasta 36 meses */
 
+int Tanteos = 100000000; /* numero de tanteos a realizar,... pueden ser millones */
+
+
 void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float Mensualidades[], int sizeMensualidades, float GastosGenerales, float GastosBI, float PresupuestoPEMmasGGmasBI, float GastosIVA, float GastosPorEjecucionContrata )
 {
 	srand ( time ( NULL ) ); /*iniciar RANDOMIZE */
@@ -24,13 +27,11 @@ void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float M
 	printf ( "Sumatorio: %.2f \n", sumatorio ( Mensualidades, sizeMensualidades ) );
 	
 	float Mensuales[36][10];
-	float dato = 0;
 	int a = 0;
 	int b = 0;
 	float SumaMensualidades = 0;
 	int Contador = 0;
 	int repite = 0;
-	int Tanteos = 100; /* numero de tanteos a realizar,... pueden ser millones */
 	
 	
 	printf ( "Creando matriz de datos posibles....\n" ) ; /* Creo la matriz con los posibles valores*/
@@ -74,26 +75,39 @@ void BuscarSoluciones ( float PEMSuma, int PorGG, int PorBI, int PorIVA, float M
 			/*la suma es correcta, paso al siguiente calculo*/
 			Contador += 1;
 			printf ( "Suma encontrada [%i]\n", Contador );
-			/* if  Comprobacion(MensualesAleatorios,sizeMensualidades){ */
-			printf ( "------------------------\n" );
-			printf ( "Pruebas Completas Realizadas: %i \n", a );
-			printf ( "Valores Mensuales Encontrados\n" );
 			
-			for ( repite = 0; repite < sizeMensualidades; repite++ ) {
-				printf ( "Mes[%i]= %.2f ____ MesOriginal[%i]= %.2f ____Diferencia: %.2f \n",
-				         repite, MensualesAleatorios[repite],
-				         repite, Mensualidades[repite],
-				         Mensualidades[repite] - MensualesAleatorios[repite]
-				       );
+			if  (Comprobacion ( MensualesAleatorios, sizeMensualidades,
+                    DifAdm,
+                    PorGG,
+                    PorBI,
+                    PorIVA,
+                    GastosGenerales,
+                    GastosBI,
+                    PresupuestoPEMmasGGmasBI,
+                    GastosIVA,
+                    GastosPorEjecucionContrata
+                 )==0) {
+				
+				printf ( "------------------------\n" );
+				printf ( "Pruebas Completas Realizadas: %i \n", a );
+				printf ( "Valores Mensuales Encontrados\n" );
+				
+				for ( repite = 0; repite < sizeMensualidades; repite++ ) {
+					printf ( "Mes[%i]= %.2f ____ MesOriginal[%i]= %.2f ____Diferencia: %.2f \n",
+					         repite, MensualesAleatorios[repite],
+					         repite, Mensualidades[repite],
+					         Mensualidades[repite] - MensualesAleatorios[repite]
+					       );
+				}
 			}
-			
 		}
 		
 	}
 	
 	
-	printf ( "Presentando datos....\n" ) ;
+	/*printf ( "Presentando datos....\n" ) ;
 	presentarMeses ( MensualesAleatorios, sizeMensualidades );
+*/
 	printf ( "Fin del programa\n" );
 }
 
