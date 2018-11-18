@@ -127,6 +127,8 @@ void presentarMeses(float m[],int sizeM){
 
 
 int Comprobacion(float m[],int sizeM){
+	/* prueba commit */
+	
 	
 	return 0; /* correcto  0: true y -1:false */
 	
