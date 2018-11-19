@@ -16,7 +16,7 @@ int Comprobacion ( double m[], int sizeM, double DifAdm, int PorGG, int PorBI, i
 	
 	/*comprobacion de sumas GG*/
 	for ( a = 0; a < sizeM; a++ ) {
-		sumaGG +=  round ( m[a] * PorGG ) * 0.01;
+		sumaGG +=  Redondear( ( m[a] * PorGG  * 0.01),2);
 	}
 	
 	if ( sumaGG >= ( GastosGenerales - DifAdm ) && ( sumaGG <= ( GastosGenerales + DifAdm ) ) ) {
@@ -27,7 +27,7 @@ int Comprobacion ( double m[], int sizeM, double DifAdm, int PorGG, int PorBI, i
 	
 	/* comrpobando sumas de Beneficio Industrial */
 	for ( a = 0; a < sizeM; a++ ) {
-		sumaBI += round ( m[a] * PorBI ) * 0.01;
+		sumaBI += Redondear(( m[a] * PorBI  * 0.01),2);
 	}
 	
 	if ( sumaBI >= ( GastosBI - DifAdm ) && ( sumaBI <= ( GastosBI + DifAdm ) ) ) {
@@ -40,7 +40,8 @@ int Comprobacion ( double m[], int sizeM, double DifAdm, int PorGG, int PorBI, i
 	
 	/* comrpobando suma IVA */
 	for ( a = 0; a < sizeM; a++ ) {
-		sumaIVA +=  round ( ( roundf ( m[a] * 100 ) * 0.01 + roundf ( m[a] * PorGG ) * 0.01 + roundf ( m[a] * PorBI ) * 0.01 ) * PorIVA ) * 0.01;
+		sumaIVA +=  Redondear ( 
+( Redondear ( m[a],2) + Redondear(( m[a] * PorGG  * 0.01 ),2)+ Redondear ( m[a] * PorBI  * 0.01,2) ) * PorIVA  * 0.01,2);
 	}
 	
 	
@@ -68,4 +69,10 @@ int Comprobacion ( double m[], int sizeM, double DifAdm, int PorGG, int PorBI, i
 	
 	/*si llegamos hasta este punto se cumplen todas las condiciones */
 	return 0; /* cumple */ /* correcto  0: true y -1:false */
+}
+
+
+double Redondear ( double x, int k )
+{
+	return floor ( pow ( 10, k ) * x + 0.5 ) / pow ( 10, k );
 }

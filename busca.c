@@ -38,8 +38,8 @@ void BuscarSoluciones ( double PEMSuma, int PorGG, int PorBI, int PorIVA, double
 	
 	for ( a = 0; a < sizeMensualidades; a++ ) {
 		for ( b = 0; b < 10; b++ ) {
-			double valor = roundf((Mensualidades[a] - 0.05 + b * 0.01)*100)*0.01;
-			Mensuales[a][b] = roundf(valor*100)*0.01;
+			double valor = Redondear((Mensualidades[a] - 0.05 + b * 0.01),2);
+			Mensuales[a][b] = Redondear(valor,2);
 		}
 		
 	}
@@ -69,7 +69,7 @@ void BuscarSoluciones ( double PEMSuma, int PorGG, int PorBI, int PorIVA, double
 		/*presentarMeses(MensualesAleatorios,sizeMensualidades);*/
 		
 		/* calculo datos */
-		SumaMensualidades = roundf(sumatorio ( MensualesAleatorios, sizeMensualidades )*100)*0.01;
+		SumaMensualidades = Redondear(sumatorio ( MensualesAleatorios, sizeMensualidades ),2);
 		
 		if ( PEMSuma == SumaMensualidades ) {
 			/*la suma es correcta, paso al siguiente calculo*/
@@ -86,7 +86,7 @@ void BuscarSoluciones ( double PEMSuma, int PorGG, int PorBI, int PorIVA, double
 					printf ( "Mes[%2i]= %.2f ____ MesOriginal[%2i]= %.2f ____Diferencia: %.2f \n",
 					         repite+1, MensualesAleatorios[repite],
 					         repite+1, Mensualidades[repite],
-					         Mensualidades[repite] - MensualesAleatorios[repite]
+					         Redondear( (MensualesAleatorios[repite]-Mensualidades[repite]  ),2)
 					       );
 				}
 			break;

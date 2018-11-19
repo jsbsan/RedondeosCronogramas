@@ -3,6 +3,7 @@
 #include <math.h>
 #include <time.h>
 #include "busca.h"
+#include "FuncionesComprobacion.h"
 
 int main ( int argc, char **argv )
 {
@@ -24,11 +25,11 @@ int main ( int argc, char **argv )
 
 	/*calculo automatico del tamaño de los datos*/
     int sizeMensualidades = sizeof(Mensualidades)/sizeof(double); 
-	double GastosGenerales = round ( PEMSuma * PorGG  ) / 100;
-	double GastosBI = round ( PEMSuma * PorBI  ) / 100;
+	double GastosGenerales = Redondear( PEMSuma * PorGG *0.01,2  ) ;
+	double GastosBI = Redondear ( PEMSuma * PorBI  * 0.01,2);
 	double PresupuestoPEMmasGGmasBI = PEMSuma + GastosGenerales + GastosBI;
-	double GastosIVA = round ( PresupuestoPEMmasGGmasBI * PorIVA  ) / 100;
-	double GastosPorEjecucionContrata = round((GastosBI + GastosGenerales + GastosIVA + PEMSuma)*100) * 0.01;
+	double GastosIVA = Redondear ( PresupuestoPEMmasGGmasBI * PorIVA *0.01,2 ) ;
+	double GastosPorEjecucionContrata = Redondear((GastosBI + GastosGenerales + GastosIVA + PEMSuma),2);
 	printf ( "-----------------------------------------------------------------\n" );
 	printf ( "Datos Iniciales: \n" );
 	printf ( "-----------------------------------------------------------------\n" );
