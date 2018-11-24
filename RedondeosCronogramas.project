@@ -99,5 +99,7 @@
     <File Name="sumatorio.c"/>
     <File Name="FuncionesComprobacion.c"/>
     <File Name="FuncionesComprobacion.h"/>
+    <File Name="strsplit.h"/>
+    <File Name="strsplit.c"/>
   </VirtualDirectory>
 </CodeLite_Project>

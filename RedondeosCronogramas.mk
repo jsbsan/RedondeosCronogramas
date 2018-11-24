@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=mintSSD
-Date                   :=19/11/18
+Date                   :=24/11/18
 CodeLitePath           :="/home/mint/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) $(IntermediateDirectory)/strsplit.c$(ObjectSuffix) 
 
 
 
@@ -130,6 +130,14 @@ $(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix): FuncionesCompro
 
 $(IntermediateDirectory)/FuncionesComprobacion.c$(PreprocessSuffix): FuncionesComprobacion.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/FuncionesComprobacion.c$(PreprocessSuffix) "FuncionesComprobacion.c"
+
+$(IntermediateDirectory)/strsplit.c$(ObjectSuffix): strsplit.c $(IntermediateDirectory)/strsplit.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/mint/jsbsanC/RedondeosCronogramas/strsplit.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/strsplit.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/strsplit.c$(DependSuffix): strsplit.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/strsplit.c$(ObjectSuffix) -MF$(IntermediateDirectory)/strsplit.c$(DependSuffix) -MM "strsplit.c"
+
+$(IntermediateDirectory)/strsplit.c$(PreprocessSuffix): strsplit.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/strsplit.c$(PreprocessSuffix) "strsplit.c"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
