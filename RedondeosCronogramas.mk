@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=mintSSD
-Date                   :=24/11/18
+Date                   :=26/11/18
 CodeLitePath           :="/home/mint/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) $(IntermediateDirectory)/strsplit.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) $(IntermediateDirectory)/strsplit.c$(ObjectSuffix) $(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix) 
 
 
 
@@ -138,6 +138,14 @@ $(IntermediateDirectory)/strsplit.c$(DependSuffix): strsplit.c
 
 $(IntermediateDirectory)/strsplit.c$(PreprocessSuffix): strsplit.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/strsplit.c$(PreprocessSuffix) "strsplit.c"
+
+$(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix): LeerFichero.c $(IntermediateDirectory)/LeerFichero.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/mint/jsbsanC/RedondeosCronogramas/LeerFichero.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LeerFichero.c$(DependSuffix): LeerFichero.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix) -MF$(IntermediateDirectory)/LeerFichero.c$(DependSuffix) -MM "LeerFichero.c"
+
+$(IntermediateDirectory)/LeerFichero.c$(PreprocessSuffix): LeerFichero.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LeerFichero.c$(PreprocessSuffix) "LeerFichero.c"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

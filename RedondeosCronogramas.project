@@ -101,5 +101,7 @@
     <File Name="FuncionesComprobacion.h"/>
     <File Name="strsplit.h"/>
     <File Name="strsplit.c"/>
+    <File Name="LeerFichero.c"/>
+    <File Name="LeerFichero.h"/>
   </VirtualDirectory>
 </CodeLite_Project>
