@@ -27,9 +27,32 @@ int main ( int argc, char **argv )
 	LeerficheroYSacarValores ( argc, argv, &PEMSuma, &PorGG, &PorBI, &PorIVA, Mensualidades, &sizeMensualidades );
 	
 	if ( sizeMensualidades == 0 ) {
-		printf ( "\n\nFin del programa... revise argumentos\n\n" );
+		printf ( "\n\nError:  No hay datos de mensualidades.... revise argumentos o archivo de datos\n\n" );
 		return 0;
 	}
+	
+	
+	if ( PEMSuma == 0 ) {
+		printf ( "\n\nError:  PEMSuma no puede ser 0.00 \n\n" );
+		return 0;
+	}
+	
+	if ( PorGG == 0 ) {
+		printf ( "\n\nPosible Error:  PorGG no puede ser 0.00 \n\n" );
+	}
+	
+	if ( PorBI == 0 ) {
+		printf ( "\n\nPosible Error:  PorBI no puede ser 0.00 \n\n" );
+	}
+	
+	if ( PorIVA == 0 ) {
+		printf ( "\n\nError:  PorIVA no puede ser 0.00 \n\n" );
+		return 0;
+	}
+	
+	
+	
+	
 	
 	
 	/*calculo automatico del tamaño de los datos*/
@@ -47,11 +70,29 @@ int main ( int argc, char **argv )
 	printf ( "-> Beneficio Industrial [PEM x BI (%i)]: %.2f \n", PorBI, GastosBI );
 	printf ( "-> Presupuesto [PEM + BI + GG =]: %.2f \n", PresupuestoPEMmasGGmasBI );
 	printf ( "-> Iva  [%i]: %.2f \n", PorIVA, GastosIVA );
-	printf ( "-> Presupuesto por Ejecución Contrata: %.2f \n", GastosPorEjecucionContrata );
+	printf ( "-> Presupuesto por Ejecucion Contrata: %.2f \n", GastosPorEjecucionContrata );
 	
 	printf ( "-----------------------------------------------------------------\n" );
 	
-	BuscarSoluciones ( PEMSuma, PorGG, PorBI, PorIVA, Mensualidades, sizeMensualidades, GastosGenerales, GastosBI, PresupuestoPEMmasGGmasBI, GastosIVA, GastosPorEjecucionContrata );
+	
+	
+	double Tanteos = 0;
+	
+	if (argc == 3) {
+// indicamos el numero de operaciones maximas...
+
+	char numeroTexto[300] ;
+	
+		strcpy ( numeroTexto, argv[2] );
+		
+		Tanteos = atoi ( numeroTexto );
+		
+		printf ( "\n Operaciones Maximas Indicas: %.2f \n", Tanteos );
+	} else {
+		Tanteos = 0; //en la subrutina ya le da un valor muy alto
+	}
+	
+	BuscarSoluciones ( PEMSuma, PorGG, PorBI, PorIVA, Mensualidades, sizeMensualidades, GastosGenerales, GastosBI, PresupuestoPEMmasGGmasBI, GastosIVA, GastosPorEjecucionContrata , Tanteos );
 	
 	return 0;
 }

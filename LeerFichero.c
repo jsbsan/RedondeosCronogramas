@@ -26,7 +26,7 @@ char* ReemplazarComaPorPunto ( char *cadena )
 void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * PorGG, int * PorBI, int * PorIVA, double  Mensualidades[], int *LongitudArray )
 {
 	int i;
-	
+	int LineaLeidas = 0; //lineas contenidas en el fichero
 	
 	printf ( "Argumentos de la linea de ordenes\n\n" );
 	
@@ -39,14 +39,24 @@ void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * P
 		return ;
 	}
 	
+
 	
 	
 	char nombre_fichero[300] ;
 	
 	strcpy ( nombre_fichero, argv[1] );
+
+
+
+
 	
 	char linea[1024];
 	int contador = 0;
+
+
+
+
+
 	FILE *fich;
 	
 	fich = fopen ( nombre_fichero, "r" );
@@ -54,14 +64,14 @@ void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * P
 	//Lee línea a línea y escribe en pantalla hasta el fin de fichero
 	while ( fgets ( linea, 1024, ( FILE* ) fich ) ) {
 		contador += 1;
-
+		
 //analisis del contenido del fichero por cada linea....
 		switch ( contador ) {
 			case 1:
 //aqui esta el array de valores de meses
 //procesar varios valores ....
-      printf ( " " );
-
+				printf ( " " );
+				
 				char ** tokens;
 				double meses;
 				
@@ -88,31 +98,44 @@ void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * P
 					
 				}
 				
+				LineaLeidas = 1;
 				break;
 				
 			case 2:
 //aqui esta la suma total PEM
 				*PEMSuma = atof ( ReemplazarComaPorPunto ( linea ) );
+				LineaLeidas = 2;
 				break;
 				
 			case 3:
 //aqui esta GG
 				*PorGG = atoi ( linea ); // es un integer
+				LineaLeidas = 3;
 				break;
 				
 				
 			case 4:
 //aqui esta BI
+				LineaLeidas = 4;
 				*PorBI = atoi ( linea ); // es un integer
 				break;
 				
 			case 5:
 //aqui esta IVA
 				*PorIVA = atoi ( linea ); // es un integer
+				LineaLeidas = 5;
 				break; //salir del switch
 				
 		}
 	}
+	
+	if ( LineaLeidas < 5 ) {
+		printf ( "\n" );
+		printf ( ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" );
+		printf ( "NOTA: \nPosible Error: Faltan lineas de datos en el archivo pasado\n" );
+		printf ( ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" );
+	}
+	
 	
 	fclose ( fich );
 	
