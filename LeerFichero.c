@@ -18,8 +18,32 @@ char* ReemplazarComaPorPunto ( char *cadena )
 	return cadena;
 }
 
+void ayuda(){
+printf("\n");
+printf("-------------------------------------\n");
+printf("AYUDA      \n");
+printf("-------------------------------------\n");
+printf("\n");
 
-
+printf("\n");
+printf("El programa funciona mediante consola, añadiendo parametros al nombre del programa. \n");
+printf("El primer parametro es el nombre del archivo de datos. Se suele colocar en el mismo directorio donde este el programa.\n");
+printf("El segundo parametro  es opcinal e indica el numero maximo que hara el ciclo de calculo. Si no se pone, el programa aplicará un ciclo de varios millones de pruebas aleatoria para encontra la posible solucion.\n");
+printf("\n");
+printf("Este programa necesita al menos un archivo de datos, que se introduce como parametro.\n");
+printf("Estructura del fichero de datos\n");
+printf("Tendra la informacion en varias lineas:\n");
+printf("      En la primera linea se pone separados por tabulador los valorres de ejecucion material por meses.\n");
+printf("      En las segunda linea se pone la cantidad del Presupuesto de Ejecucion Material (PEM).\n");
+printf("      En la tercera linea el porcentaje de Gastos Generales (puede variar entre 13 y 17 segun la normativa).\n");
+printf("      En la cuarta linea el porcentaje de Beneficio Industrial (BI) suele ser el .6\n");
+printf("      Y por ultimao en la quinta linea se pondra el porcentaje de IVA, que suele ser el 21.\n");
+printf("\n");
+printf("\n");
+printf("Autor: Julio Sanchez Berro (jsbsan)\n");
+printf("Licencia GNU-GPL\n");
+printf("Dos Hermanas, Sevilla,  2018\n");
+}
 
 
 
@@ -36,6 +60,7 @@ void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * P
 	
 	if ( i < 2 ) {
 		printf ( "\n Error: No hay parametros suficientes \n" );
+       ayuda();
 		return ;
 	}
 	

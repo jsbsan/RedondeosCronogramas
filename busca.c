@@ -20,12 +20,17 @@ void BuscarSoluciones ( double PEMSuma, int PorGG, int PorBI, int PorIVA, double
 		Tanteos = 10000000000;
 	}
 	
-	printf ( "Funcion en .h: PEMSuma:  %.2f \n", PEMSuma );
+	printf ( "Comprobaciones.....\n" );
+	printf ( "Funcion en .h: PEMSuma:  %.2f \n ", PEMSuma );
 	
 	for ( int i = 0; i < sizeMensualidades; i++ ) {
-		printf ( "Mensualides[%2i]: %.2f \n", i + 1, Mensualidades[i] );
+	
+		printf ( "Mensualides[%2i]: %.2f \t", i + 1, Mensualidades[i] );
 		
+		if  ( ceil ( (i / 4 ) * 4 == i )) printf ( "\n" );
 	}
+	
+	printf ( "\n" );
 	
 	double sumatorioCalculo = 0;
 	
