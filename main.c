@@ -7,6 +7,8 @@
 #include "strsplit.h"
 #include "sumatorio.h"
 #include "LeerFichero.h"
+#include <string.h>
+
 
 int main ( int argc, char **argv )
 {
@@ -18,9 +20,9 @@ int main ( int argc, char **argv )
 	
 	double PEMSuma = 0;
 	/* Definicion de porcentajes de G.G, B.I. e I.V.A */
-	int PorGG = 0;
-	int PorBI = 0;
-	int PorIVA = 0;
+	double PorGG = 0;
+	double PorBI = 0;
+	double PorIVA = 0;
 	int sizeMensualidades = 0;
 	
 	

@@ -43,11 +43,12 @@ printf("\n");
 printf("Autor: Julio Sanchez Berro (jsbsan)\n");
 printf("Licencia GNU-GPL\n");
 printf("Dos Hermanas, Sevilla,  2018\n");
+printf("Dos Hermanas, Sevilla,  2023 mejorado en aceptar decimales en GG, BI, e IVA\n");
 }
 
 
 
-void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * PorGG, int * PorBI, int * PorIVA, double  Mensualidades[], int *LongitudArray )
+void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, double *PorGG, double *PorBI, double *PorIVA, double  Mensualidades[], int *LongitudArray )
 {
 	int i;
 	int LineaLeidas = 0; //lineas contenidas en el fichero
@@ -134,7 +135,7 @@ void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * P
 				
 			case 3:
 //aqui esta GG
-				*PorGG = atoi ( linea ); // es un integer
+				*PorGG = atof ( linea ); // normalmente es integer, pero lo pongo como float 
 				LineaLeidas = 3;
 				break;
 				
@@ -142,12 +143,12 @@ void LeerficheroYSacarValores ( int argc, char **argv, double * PEMSuma, int * P
 			case 4:
 //aqui esta BI
 				LineaLeidas = 4;
-				*PorBI = atoi ( linea ); // es un integer
+				*PorBI = atof ( linea ); // normalmente es integer, pero lo pongo como float 
 				break;
 				
 			case 5:
 //aqui esta IVA
-				*PorIVA = atoi ( linea ); // es un integer
+				*PorIVA = atof ( linea ); // normalmente es integer, pero lo pongo como float 
 				LineaLeidas = 5;
 				break; //salir del switch
 				

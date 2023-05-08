@@ -12,7 +12,7 @@ double MensualesAleatorios[60];/* hasta 36 meses */
 //double Tanteos = 0; /* numero de tanteos a realizar,... pueden ser millones */
 
 
-void BuscarSoluciones ( double PEMSuma, int PorGG, int PorBI, int PorIVA, double Mensualidades[], int sizeMensualidades, double GastosGenerales, double GastosBI, double PresupuestoPEMmasGGmasBI, double GastosIVA, double GastosPorEjecucionContrata , double Tanteos )
+void BuscarSoluciones ( double PEMSuma, double PorGG, double PorBI, double PorIVA, double Mensualidades[], int sizeMensualidades, double GastosGenerales, double GastosBI, double PresupuestoPEMmasGGmasBI, double GastosIVA, double GastosPorEjecucionContrata , double Tanteos )
 {
 	srand ( time ( NULL ) ); /*iniciar RANDOMIZE */
 	
