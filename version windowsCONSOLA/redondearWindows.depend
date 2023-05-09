@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1683611893 source:c:\redondea\proyecto\redondearwindows\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	"busca.h"
+	"FuncionesComprobacion.h"
+	"strsplit.h"
+	"sumatorio.h"
+	"LeerFichero.h"
+	<string.h>
+
+1683570036 c:\redondea\proyecto\redondearwindows\busca.h
+
+1683570611 c:\redondea\proyecto\redondearwindows\funcionescomprobacion.h
+
+1683544941 c:\redondea\proyecto\redondearwindows\strsplit.h
+
+1683544941 c:\redondea\proyecto\redondearwindows\sumatorio.h
+
+1683570627 c:\redondea\proyecto\redondearwindows\leerfichero.h
+
