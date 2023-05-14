@@ -58,6 +58,7 @@ int Comprobacion ( double m[], int sizeM, double DifAdm, double PorGG, double Po
 		printf ( "Suma GG: %.2f \n", sumaGG );
 		printf ( "Suma BI: %.2f \n", sumaBI );
 		printf ( "Suma IVA: %.2f \n", sumaIVA );
+        
 		printf ( "Suma Totales: %.2f \n", sumaSubtotales );
 		printf ( "--------------------------\n" );
 		printf ( "Se ha encontrado solución \n" );

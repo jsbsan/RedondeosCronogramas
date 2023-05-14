@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="WORK" Database="" Version="10.0.0">
-  <Project Name="RedondeosCronogramas" Path="../../../../../../../../hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/RedondeosCronogramas.project" Active="Yes"/>
+  <Project Name="RedondeosCronogramas" Path="../../RedondeosCronogramas.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="RedondeosCronogramas" ConfigName="Debug"/>
+      <Project Name="RedondeosCronogramas" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
+      <Project Name="RedondeosCronogramas" ConfigName="Release"/>
       <Project Name="RedondeosCronogramas" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>

@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=RedondeosCronogramas
 ConfigurationName      :=Debug
-WorkspacePath          :="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/workspace/WORK"
-ProjectPath            :="/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas"
+WorkspacePath          :="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/workspace/WORK"
+ProjectPath            :="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=minino
-Date                   :=08/05/23
+Date                   :=12/05/23
 CodeLitePath           :=/home/minino/.codelite
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC
@@ -92,7 +92,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/mainTest.c$(ObjectSuffix): mainTest.c $(IntermediateDirectory)/mainTest.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/mainTest.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/mainTest.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/mainTest.c$(DependSuffix): mainTest.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/mainTest.c$(ObjectSuffix) -MF$(IntermediateDirectory)/mainTest.c$(DependSuffix) -MM mainTest.c
 
@@ -100,7 +100,7 @@ $(IntermediateDirectory)/mainTest.c$(PreprocessSuffix): mainTest.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/mainTest.c$(PreprocessSuffix) mainTest.c
 
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(DependSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
 
@@ -108,7 +108,7 @@ $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 
 $(IntermediateDirectory)/busca.c$(ObjectSuffix): busca.c $(IntermediateDirectory)/busca.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/busca.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/busca.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/busca.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/busca.c$(DependSuffix): busca.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/busca.c$(ObjectSuffix) -MF$(IntermediateDirectory)/busca.c$(DependSuffix) -MM busca.c
 
@@ -116,7 +116,7 @@ $(IntermediateDirectory)/busca.c$(PreprocessSuffix): busca.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/busca.c$(PreprocessSuffix) busca.c
 
 $(IntermediateDirectory)/sumatorio.c$(ObjectSuffix): sumatorio.c $(IntermediateDirectory)/sumatorio.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/sumatorio.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/sumatorio.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/sumatorio.c$(DependSuffix): sumatorio.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/sumatorio.c$(ObjectSuffix) -MF$(IntermediateDirectory)/sumatorio.c$(DependSuffix) -MM sumatorio.c
 
@@ -124,7 +124,7 @@ $(IntermediateDirectory)/sumatorio.c$(PreprocessSuffix): sumatorio.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/sumatorio.c$(PreprocessSuffix) sumatorio.c
 
 $(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix): FuncionesComprobacion.c $(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/FuncionesComprobacion.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/FuncionesComprobacion.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix): FuncionesComprobacion.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/FuncionesComprobacion.c$(ObjectSuffix) -MF$(IntermediateDirectory)/FuncionesComprobacion.c$(DependSuffix) -MM FuncionesComprobacion.c
 
@@ -132,7 +132,7 @@ $(IntermediateDirectory)/FuncionesComprobacion.c$(PreprocessSuffix): FuncionesCo
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/FuncionesComprobacion.c$(PreprocessSuffix) FuncionesComprobacion.c
 
 $(IntermediateDirectory)/strsplit.c$(ObjectSuffix): strsplit.c $(IntermediateDirectory)/strsplit.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/strsplit.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/strsplit.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/strsplit.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/strsplit.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/strsplit.c$(DependSuffix): strsplit.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/strsplit.c$(ObjectSuffix) -MF$(IntermediateDirectory)/strsplit.c$(DependSuffix) -MM strsplit.c
 
@@ -140,7 +140,7 @@ $(IntermediateDirectory)/strsplit.c$(PreprocessSuffix): strsplit.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/strsplit.c$(PreprocessSuffix) strsplit.c
 
 $(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix): LeerFichero.c $(IntermediateDirectory)/LeerFichero.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/hdd/mint/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/LeerFichero.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/LeerFichero.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/LeerFichero.c$(DependSuffix): LeerFichero.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LeerFichero.c$(ObjectSuffix) -MF$(IntermediateDirectory)/LeerFichero.c$(DependSuffix) -MM LeerFichero.c
 
