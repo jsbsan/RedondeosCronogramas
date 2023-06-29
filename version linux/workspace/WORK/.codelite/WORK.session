@@ -1,25 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/workspace/WORK/WORK.workspace">
-  <int Value="1" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/workspace/WORK/WORK.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/main.c" Name="FileName"/>
-      <int Value="12" Name="FirstVisibleLine"/>
+      <int Value="81" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/FuncionesComprobacion.c" Name="FileName"/>
-      <int Value="51" Name="FirstVisibleLine"/>
-      <int Value="60" Name="CurrentLine"/>
+      <int Value="15" Name="FirstVisibleLine"/>
+      <int Value="63" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/busca.c" Name="FileName"/>
-      <int Value="129" Name="FirstVisibleLine"/>
+      <int Value="104" Name="FirstVisibleLine"/>
+      <int Value="115" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/sumatorio.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/sumatorio.c" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/strsplit.h" Name="FileName"/>
+      <int Value="1" Name="FirstVisibleLine"/>
+      <int Value="2" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/strsplit.c" Name="FileName"/>
+      <int Value="48" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/minino/Documentos/Gambas2/00 jsbsan/RedondeosGithub/RedondeosCronogramas/version linux/mainTest.c" Name="FileName"/>
+      <int Value="24" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>

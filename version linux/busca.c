@@ -113,7 +113,7 @@ void BuscarSoluciones ( double PEMSuma, double PorGG, double PorBI, double PorIV
 				printf ( "Valores Mensuales Encontrados\n" );
 				solucionEncontrada = 1;
 				
-				for ( repite = 0; repite < sizeMensualidades; repite++ ) {
+				for ( repite = 0; repite < (int)sizeMensualidades; repite++ ) {
 					printf ( "Mes[%2i]= %.2f ____ MesOriginal[%2i]= %.2f ____Diferencia: %.2f \n",
 					         repite + 1, MensualesAleatorios[repite],
 					         repite + 1, Mensualidades[repite],

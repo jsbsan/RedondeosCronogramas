@@ -61,7 +61,7 @@ int Comprobacion ( double m[], int sizeM, double DifAdm, double PorGG, double Po
         
 		printf ( "Suma Totales: %.2f \n", sumaSubtotales );
 		printf ( "--------------------------\n" );
-		printf ( "Se ha encontrado solución \n" );
+		printf ( "Se ha encontrado solucion \n" );
 		return 0; /* cumple */ /* correcto  0: true y -1:false */
 		
 	} else {
